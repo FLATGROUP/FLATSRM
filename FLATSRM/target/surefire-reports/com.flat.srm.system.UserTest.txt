@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.flat.srm.system.UserTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.407 sec <<< FAILURE!
-saveUser(com.flat.srm.system.UserTest)  Time elapsed: 0.249 sec  <<< ERROR!
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.966 sec <<< FAILURE!
+saveUser(com.flat.srm.system.UserTest)  Time elapsed: 0.328 sec  <<< ERROR!
 org.springframework.dao.DuplicateKeyException: 
 ### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '70' for key 'cp_user_mail_index'
 ### The error may involve com.flat.srm.system.dao.user.IUserMapper.save-Inline

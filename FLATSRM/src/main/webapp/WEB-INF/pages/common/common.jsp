@@ -12,19 +12,20 @@ if(port==80){
 	basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
 }
 request.setAttribute("basePath", basePath);
-%>  
+%>
 <!-- bootstrap & fontawesome -->
 <link rel="stylesheet" href="${basePath}/resources/assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="${basePath}/resources/assets/font-awesome/4.5.0/css/font-awesome.min.css" /> 
 <!-- page specific plugin styles --> 
 <!-- text fonts -->
-<link rel="stylesheet" href="${basePath}/resources/assets/css/fonts.googleapis.com.css" /> 
-
+<link rel="stylesheet" href="${basePath}/resources/assets/css/fonts.googleapis.com.css" />
+<!-- page specific plugin styles -->
+<link rel="stylesheet" href="${basePath}/resources/assets/css/colorbox.min.css" />
 <!-- page specific plugin styles -->
 <link rel="stylesheet" href="${basePath}/resources/assets/css/jquery-ui.min.css" />
 <link rel="stylesheet" href="${basePath}/resources/assets/css/ui.jqgrid.min.css" />
 <!-- ace styles -->
-<link rel="stylesheet" href="${basePath}/resources/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" /> 
+<link rel="stylesheet" href="${basePath}/resources/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 <link rel="stylesheet" href="${basePath}/resources/assets/css/ace-skins.min.css" />
 <link rel="stylesheet" href="${basePath}/resources/assets/css/ace-rtl.min.css" />
 <link rel="stylesheet" href="${basePath}/resources/sg/css/sg.css"  >

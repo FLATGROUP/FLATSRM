@@ -42,7 +42,7 @@
 								<i class="ace-icon fa fa-home home-icon"></i>
 								<a href="${basePath}/admin/index">Home</a>
 							</li>
-							<li class="active">供应商管理/供应商认证</li><!--模板修改-->
+							<li class="active">供应商管理 > 供应商认证</li><!--模板修改-->
 						</ul><!-- /.breadcrumb -->
 						<div class="nav-search" id="nav-search">
 							<div class="btn-group" style="float: right;">

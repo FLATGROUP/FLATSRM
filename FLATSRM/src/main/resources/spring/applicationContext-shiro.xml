@@ -30,10 +30,11 @@
 			<value>
 				<!--静态资源的访问  -->
 				/resources/** = anon
+				/upfilte/** = authc
 				<!-- /getLogout = logout --> 
-				/login =anon 
-				/submitLogin =anon   
-				/LodingfindRole =anon 
+				/login =anon
+				/submitLogin =anon
+				/LodingfindRole =anon
 				<!--/** = authc 代表所有的url必须经过认证才可以访问  --> 
 				<!-- /getLogin = authc -->
 				/admin/** = authc   

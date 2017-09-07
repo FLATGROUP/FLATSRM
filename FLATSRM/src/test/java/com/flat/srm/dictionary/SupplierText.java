@@ -6,6 +6,7 @@ import com.flat.srm.dictionary.bean.SupplierPicture;
 import com.flat.srm.dictionary.dao.supplier.ISupplierMapper;
 import com.flat.srm.dictionary.dao.supplierPicture.ISupplierPictureMapper;
 import com.flat.srm.dictionary.service.supplier.ISupplierService;
+import com.flat.srm.dictionary.service.supplierPicture.ISupplierPictureService;
 import org.apache.commons.fileupload.MultipartStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,7 +30,8 @@ public class SupplierText {
     private ISupplierPictureMapper supplierPictureMapper;
     @Autowired
     private ISupplierService supplierService;
-
+    @Autowired
+    private ISupplierPictureService supplierPictureService;
 
     @Test
     public void pictureSaveText(){
@@ -63,10 +65,10 @@ public class SupplierText {
          * @author jingu qq 274492196
          * 2017/8/15
         */
-        SupplierPicture supplierPicture=supplierPictureMapper.find("1845642563_151.jpg");
+       /* SupplierPicture supplierPicture=supplierPictureMapper.find("1845642563_151.jpg");
         if(supplierPicture!=null ){
            System.out.println(supplierPicture.getSize());
-        }
+        }*/
     }
     @Test
     public void findTestSupplier(){
@@ -85,5 +87,14 @@ public class SupplierText {
         for(Supplier supplier:listSup){
             System.out.println(supplier.getCompany());
         }*/
+    }
+    @Test
+    public void findTestSupplierPic(){
+        TzParams tzParams=new TzParams();
+        tzParams.setId((long) 15);
+        List<SupplierPicture> s= supplierPictureService.find(tzParams);
+        for (SupplierPicture supplierPicture : s) {
+            System.out.println(supplierPicture.getUrl());
+        }
     }
 }

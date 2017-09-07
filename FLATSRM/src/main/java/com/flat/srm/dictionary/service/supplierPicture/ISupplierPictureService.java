@@ -1,6 +1,9 @@
 package com.flat.srm.dictionary.service.supplierPicture;
 
+import com.flat.srm.common.publicBean.TzParams;
 import com.flat.srm.dictionary.bean.SupplierPicture;
+
+import java.util.List;
 
 /**
  *
@@ -23,5 +26,5 @@ public interface ISupplierPictureService {
      * @param par
      * @return
      */
-    public SupplierPicture find(String par);
+    public List<SupplierPicture> find(TzParams par);
 }

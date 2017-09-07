@@ -1,7 +1,10 @@
 package com.flat.srm.dictionary.dao.supplierPicture;
 
+import com.flat.srm.common.publicBean.TzParams;
 import com.flat.srm.dictionary.bean.SupplierPicture;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * 供应商的图片管理
@@ -22,8 +25,8 @@ public interface ISupplierPictureMapper {
 
     /**
      * 查询
-     * @param par
+     * @param params
      * @return
      */
-    public SupplierPicture find(String par);
+    public List<SupplierPicture> find(TzParams params);
 }

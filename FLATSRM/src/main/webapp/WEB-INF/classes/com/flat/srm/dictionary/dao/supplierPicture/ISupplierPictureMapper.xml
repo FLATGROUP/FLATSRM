@@ -2,6 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.flat.srm.dictionary.dao.supplierPicture.ISupplierPictureMapper" >
+
+	<sql id="supplierPicture">
+		id,updateBy,newBy,newTime,updateTime,supplierId,supplierName,url,name,size
+	</sql>
 	 <!--供应商注册保持 -->
 	 <insert  id="save" useGeneratedKeys="true" keyProperty="id"  parameterType="SupplierPicture">
 	 	insert into
@@ -61,8 +65,16 @@
 			</trim>	
 	 </insert>
 
-	<select id="find" resultType="SupplierPicture">
-		select id,updateBy,newBy,newTime,updateTime,supplierId,supplierName,url,name,size from srm_fileupload where name=#{0}
+	<select id="find" resultType="SupplierPicture" parameterType="TzParams">
+		select <include refid="supplierPicture"/> from srm_fileupload
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="id!=null and id!=''">
+				id=#{id}
+			</if>
+			<if test="name!=null and name!=''">
+				name=#{name}
+			</if>
+		</trim>
 
 	</select>
 

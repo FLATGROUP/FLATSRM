@@ -2,7 +2,7 @@
 /**
 * jqgrid表格编辑模板
 */
-
+var data;
 var certificationMG={
     //jqgrid 表格初始化
     jqgridIni:function($gridTable,width,height){
@@ -50,10 +50,10 @@ var certificationMG={
                 var table = this;
                 setTimeout(function(){
                     certificationMG.updatePagerIcons(table);
-                }, 0);
+                },0);
             },
             ondblClickRow:function(rowid,iRow,iCol,e){
-                var data=$gridTable.jqGrid('getRowData',rowid);
+                data=$gridTable.jqGrid('getRowData',rowid);
                 certificationMG.jqgridEdit(width,height,data);
             }
         });
@@ -97,11 +97,10 @@ var certificationMG={
         formAssignment($("#supplier"),data);
     },
     /**
-     * 表格修改
+     * 查看未认证供应商的详细信息
      * 参数说明：选择的行ID
      */
-    jqgridEdit:function(width,height,data){
-        console.log(data);
+    jqgridEdit:function(width,height){
         $.tzIframe({
             title:"未认证供应商信息",
             content:basePath+"/admin/supplier/noCertificationFinds/"+data.id,

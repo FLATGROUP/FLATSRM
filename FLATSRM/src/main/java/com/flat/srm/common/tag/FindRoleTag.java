@@ -24,7 +24,7 @@ public class FindRoleTag extends BodyTagSupport{
 		// 获取sprignweb容器的应用上下文，因为在web容器启动的时候，容器会将spring的applicationContext注入到一个叫application的上下文中
 		WebApplicationContext ctx = WebApplicationContextUtils
 				.getRequiredWebApplicationContext(context);
-		// 从webapplicationContext获取对应的对象 
+		// 从we bapplicationContext获取对应的对象
 		IRoleService roleService = (IRoleService) ctx .getBean("roleServiceImpl");
 		TzParams params=new TzParams();
 		params.setId(roleId);

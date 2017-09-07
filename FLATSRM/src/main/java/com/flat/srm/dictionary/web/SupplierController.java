@@ -5,6 +5,7 @@ import com.flat.srm.common.publicBean.TzParams;
 import com.flat.srm.dictionary.bean.Supplier;
 import com.flat.srm.dictionary.service.supplier.ISupplierService;
 import com.flat.srm.dictionary.service.supplier.impl.SupplierServiceImpl;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 供应商字典入库
+ * 供应商管理入口
  * classNmae SupplierController
  * package com.flat.srm.dictionary.web
  * user jingu
@@ -32,10 +33,10 @@ public class SupplierController {
     private ISupplierService supplierService;
 
     @RequestMapping(value = "/supplierMG")
-    //@RequiresPermissions("system/roleMG")
+    @RequiresPermissions("supplier/record")
     public ModelAndView goIndex(ModelAndView modelAndView) {
         /**
-         *SupplierController方法goIndex的功能描述:进入供应商管理页面
+         *SupplierController方法goIndex的功能描述:进入供应商信息页面
          * @paam [modelAndView]
          * @return org.springframework.web.servlet.ModelAndView
          * @throws
@@ -47,7 +48,7 @@ public class SupplierController {
         return modelAndView;
     }
     @RequestMapping(value = "/certificationMG")
-    //@RequiresPermissions("system/roleMG")
+    @RequiresPermissions("supplier/certification")
     public ModelAndView goIndexCertification(ModelAndView modelAndView) {
         /**
          *SupplierController方法goIndex的功能描述:进入供应商认证管理页面
@@ -63,6 +64,7 @@ public class SupplierController {
     }
     @ResponseBody
     @RequestMapping(value = "/noCertificationFinds",method = RequestMethod.POST)
+    @RequiresPermissions("supplier/certification")
     public Map<String,Object> find(TzParams params){
         /**
          *SupplierController方法find的功能描述
@@ -82,6 +84,7 @@ public class SupplierController {
     }
 
     @RequestMapping(value = "/noCertificationFinds/{par}")
+    @RequiresPermissions("supplier/certification")
     public ModelAndView supplersTP(@PathVariable("par") String par){
         /**
          *SupplierController方法supplersTP的功能描述

@@ -116,6 +116,7 @@
 
 		</ul>
 	</li>
+	<shiro:hasPermission name="supplier">
 	<li class="">
 		<a href="#" class="dropdown-toggle">
 			<i class="menu-icon fa fa-users"></i>
@@ -126,6 +127,7 @@
 		</a> 
 		<b class="arrow"></b>
 		<ul class="submenu">
+			<shiro:hasPermission name="supplier/certification">
 			<li class="">
 				<a href="${basePath}/admin/supplier/certificationMG">
 					<i class="menu-icon fa fa-caret-right"></i>
@@ -133,6 +135,8 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			</shiro:hasPermission>
+		    <shiro:hasPermission name="supplier/record">
 			<li class="">
 				<a href="${basePath}/admin/supplier/supplierMG">
 					<i class="menu-icon fa fa-caret-right"></i>
@@ -140,9 +144,11 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+		   </shiro:hasPermission>
 			 
 		</ul>
 	</li>
+	</shiro:hasPermission>
 	<li class="">
 		<a href="#" class="dropdown-toggle">
 			<i class="menu-icon fa fa-leaf"></i>

@@ -11,6 +11,12 @@
 		border-style: none;
 		border-bottom: 1px solid #000;
 	}
+	.tab-content .tab-content-img{
+		width:200px;height:200px; float: left;margin:2;
+	}
+	.tab-content .tab-content-imgBig{
+		width:800px;height:800px; float: left;margin:2;
+	}
 </style>
 
 <div id='dialog-form-supplier'>
@@ -94,19 +100,40 @@
 	     <ul class='nav nav-tabs' id='myTab'>
 		       <li class='active'>
 			         <a data-toggle='tab' href='#table' aria-expanded='true'>
-				           <i class='green ace-icon fa fa-th bigger-120'></i>供应商证件信息</a>
-			       </li>
-		     </ul>
-	     <div class='tab-content'>
+				     <i class='green ace-icon fa fa-th bigger-120'></i>供应商证件信息</a>
+			    </li>
+		  </ul>
+	     <div class='tab-content' style="border: 0px solid">
 		       <div id='table' class='tab-pane fade active in'>
-			         <p>改供应商在主持的时候没有上次相关的证件信息。</p>
-			       </div>
-		     </div>
-	   </div>
+			        <%-- <p>改供应商在主持的时候没有上次相关的证件信息。</p>--%>
+				    <div  class="tab-content-img tupian">
+					   <img style="width: 100%;height: 100%;" src=${basePath}/upfilte/gongys/15/1845642563_15.jpg>
+				   </div>
+					<div class="tab-content-img tupian">
+						<img style="width: 100%;height: 100%;" src=${basePath}/upfilte/gongys/15/1845642563_15.jpg>
+					</div>
+					<div class="tab-content-img tupian">
+						<img style="width: 100%;height: 100%;" src=${basePath}/upfilte/gongys/15/1845642563_15.jpg>
+					</div>
+			   </div>
+		 </div>
+   </div>
  </div>
+<!-- page specific plugin scripts -->
+<%--<script src="${basePath}/resources/assets/js/jquery.colorbox.min.js"></script>--%>
 <script type="text/javascript">
-
-
+	$(function(){
+	    /*表单赋值*/
+        formAssignment($("#supplier"),parent.data);
+        /*图片大小切换*/
+		$(".tupian").on("click",function(){
+            var $this=$(this);
+            $("#table").find(".tab-content-imgBig").each(function(){
+                $(this).removeClass("tab-content-imgBig").addClass("tab-content-img");
+			});
+            $this.removeClass("tab-content-img").addClass("tab-content-imgBig");
+        })
+	});
 </script>
 
 

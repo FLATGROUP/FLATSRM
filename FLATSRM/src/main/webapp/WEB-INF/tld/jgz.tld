@@ -36,7 +36,24 @@
 	  		<rtexprvalue>true</rtexprvalue>
 	 	</attribute>
 	 </tag>
- 
+
+	<tag>
+		<description>字典项目数据转换标签</description>
+		<name>DictionaryTag</name>
+		<tag-class>com.flat.srm.common.tag.DictionaryTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
 	 
 	 <tag>
 	  	<description>查询遍历标签</description>

@@ -1,6 +1,7 @@
 package com.flat.srm.system.web;
 
 import com.flat.srm.common.core.BaseController;
+import com.flat.srm.common.publicBean.TzParams;
 import com.flat.srm.common.util.TmFileUtil;
 import com.flat.srm.common.util.stringUtil;
 import com.flat.srm.dictionary.bean.SupplierPicture;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
  
 
@@ -75,8 +77,10 @@ public class UploadController extends BaseController {
 				map.put("name", fname);
 				map.put("url", url);
 				map.put("size", TmFileUtil.countFileSize(size));
+				TzParams params=new TzParams();
+				params.setName(fname);
 				//查询是否有重复
-				SupplierPicture supplierPicture=supplierPictureService.find(fname);
+				List<SupplierPicture>  supplierPicture=supplierPictureService.find(params);
 				if(supplierPicture!=null){
 					re.put("err","上传失败！重复！");
 				}else{

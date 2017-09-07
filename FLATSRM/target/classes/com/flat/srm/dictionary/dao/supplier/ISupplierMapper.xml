@@ -4,8 +4,10 @@
 <mapper namespace="com.flat.srm.dictionary.dao.supplier.ISupplierMapper" >
 
 	<sql id="findSupplier">
-		id,type,company,nature,industry,bank,bankAccount,legalPerson,legalPersonPhone,countries,province
+		id,pId,type,company,nature,industry,bank,bankAccount,legalPerson,legalPersonPhone,countries,province,state,updateBy,newBy,isParent,newTime,updateTime,
+		address,mail,userName,department,position,phone,production,quality
 	</sql>
+
 
 	 <!--供应商注册保持 -->
 	 <insert  id="save" useGeneratedKeys="true" keyProperty="id"  parameterType="Supplier">
@@ -186,6 +188,5 @@
 	<select id="findTotal" parameterType="TzParams" resultType="java.lang.Integer">
 		select count(1) from cp_supplier
 		where state=#{state}
-		LIMIT #{pageNo},#{pageSize}
 	</select>
 </mapper>
